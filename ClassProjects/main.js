@@ -8,6 +8,7 @@ if (storedSearchHistory) {
   displaySearchHistory();
 }
 
+
 async function getWeather(city) {
   const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`;
   const options = {
@@ -45,8 +46,44 @@ function displayWeather(weatherData) {
       <p class="date">${location.localtime}</p>
     </div>
     <h3>${current.temp_c}°C</h3>
+    <div id = "condition">
     <p class="condition">${current.condition.text}</p>
-  `;
+    </div>
+  `
+  if(current.condition.text == "Sunny"){
+    const conditionImg = document.getElementById("condition")
+    const img = document.createElement("img")
+    img.src  = "assets/sun.png"
+    conditionImg.appendChild(img)
+  }
+  else if (current.condition.text == "Light rain" || current.condition.text == "Light rain shower" || current.condition.text == "Patchy rain nearby"){
+    const conditionImg = document.getElementById("condition")
+    const img = document.createElement("img")
+    img.src  = "assets/light-rain.png"
+    conditionImg.appendChild(img)
+  }
+  else if(current.condition.text == "Partly cloudy"){
+    const conditionImg = document.getElementById("condition")
+    const img = document.createElement("img")
+    img.src  = "assets/clouds.png"
+    conditionImg.appendChild(img)
+  }
+  else if(current.condition.text == "Snowy"){
+    const conditionImg = document.getElementById("condition")
+    const img = document.createElement("img")
+    img.src  = "assets/snow.png"
+    conditionImg.appendChild(img)
+  }
+  else{
+    const conditionImg = document.getElementById("condition")
+    const img = document.createElement("img")
+    img.src  = ""
+    conditionImg.appendChild(img)
+  }
+
+  ;
+
+
 
   addToSearchHistory(location.name, current.temp_c);
 }
