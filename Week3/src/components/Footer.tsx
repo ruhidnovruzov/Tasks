@@ -4,6 +4,7 @@ import facebook from "../assets/fc.svg";
 import twitter from "../assets/twitter.svg";
 import linkedin from "../assets/linkedin.svg";
 
+
 const Footer = () => {
   return (
     <div className="container">
