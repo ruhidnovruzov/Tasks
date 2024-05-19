@@ -1,0 +1,27 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+  
+    ul {
+      display: flex;
+      flex-direction: column;
+  
+      li {
+        padding: 8px;
+  
+        &:first-of-type {
+          color: white;
+        }
+      }
+    }
+  }
+  
+  .container {
+    margin-top: 150px;
+    background-color: #0F0F0F;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0 162px;
+    padding-top: 100px;
+  }
