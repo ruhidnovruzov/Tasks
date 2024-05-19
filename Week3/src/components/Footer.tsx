@@ -8,6 +8,7 @@ const Footer = () => {
   return (
     <div className="container">
       <div className="footer">
+        
         <ul>
           <li>Home</li>
           <li>Categories</li>
